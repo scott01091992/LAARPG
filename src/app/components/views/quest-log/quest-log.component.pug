@@ -1,0 +1,14 @@
+div#questLogContainer
+
+    div.quest(*ngFor="let quest of quests")
+
+        div.questTile
+            span.questTitle {{quest.title}}
+
+            div.questSummary {{quest.summary}}
+
+            span.expirationDate {{quest.expirationDate}}
+
+            div.eventsIconBar
+                div.eventIconImageHolder(*ngFor="let event of quest.events")
+                    img.eventIconImage([src]="event.flavorImage | assetsEventImg")
