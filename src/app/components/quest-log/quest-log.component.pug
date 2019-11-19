@@ -1,0 +1,28 @@
+div#questLogContainer
+
+    div.quest(*ngFor="let quest of quests")
+
+        div.questTile([ngStyle]="{'border-color': quest.borderColor}")
+            span.questTitle {{quest.title}}
+            div.questSummary {{quest.summary}}
+            span.expirationDate {{quest.expirationDate}}
+            
+            div.eventsIconBar
+                div.eventIconImageHolder(*ngFor="let event of quest.events")
+                    div.eventTile 
+                        span.eventTitle {{event.title}} | {{event.location}}
+                        img.eventIconImage([src]="event.flavorImage | assetsEventImg")
+                        span.eventDate {{event.dateTime}}
+                        
+                    div.eventTileFlipped
+                        span.eventTitle {{event.title}}
+                        div.eventDescription {{event.description}}
+                        span.eventDate {{event.dateTime}}
+                        
+                    div.eventTileExpanded
+                        span.eventLocation {{event.location}}
+                        div.eventChoicesBox
+                            div.eventChoices(*ngFor="let choice of event.choices")
+                                div.eventChoiceOption {{choice.option}}
+                                div.eventChoiceImage {{choice.icon}}
+                                div.eventChoiceSelected([ngStyle]="{'background-color':choice.selected === true ? '#9bc53d' : '#e84855' }")

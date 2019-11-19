@@ -5,13 +5,47 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './quest-log.component.pug',
   styleUrls: ['./quest-log.component.sass']
 })
+
 export class QuestLogComponent implements OnInit {
+
+    getBorderColor = (color) => {
+        console.log(color);
+        var str = "solid 1em 1em 1em 1em " + color;
+        return str;
+    }
 
     quests = [{
         createdAt: "Jan 7th 2019",
         title: "Partners For Life",
         expirationDate: null,
+        borderColor: "#e84855",
         summary: "Brandon met Kali for the first time in August 2019. He decided to change his life plan and live a life with her as his partner. That was only the beginning of their adventure...",
+        objective: "Live out our lives as the best partners ever. Using teamwork, reason, logic and cooperation to make everything better for each other all the time.",
+        awards: [{
+            name: "Its Official",
+            description: "Reach officially dating status with Kali",
+            completed: true,
+            dateCompleted: null,
+            icon: "Image"
+        },{
+            name: "Its Legal",
+            description: "Married Kali, wedding dress and all",
+            completed: false,
+            dateCompleted: null,
+            icon: "Image"
+        },{
+            name: "Sharing a Roof",
+            description: "Move in with Kali, living under the same roof together",
+            completed: false,
+            dateCompleted: null,
+            icon: "Image"
+        },{
+            name: "Meeting the Kids",
+            description: "Spend a day with Ari and Ava for the first time",
+            completed: true,
+            dateCompleted: null,
+            icon: "Image"
+        }],
         events: [
             {
                 title: "Pax with Kali",
@@ -126,6 +160,7 @@ export class QuestLogComponent implements OnInit {
         createdAt: "October 30th 2019",
         title: "Earning a Living",
         expirationDate: null,
+        borderColor: "#9bc53d",
         summary: "After losing his job at Honeywell, it was time to start the unemployment train once again. Unfortunately, there would be many other hurdles to overcome along the way.",
         objective: "Get a new job in the tech industry that can grow into a career.",
         events: [
@@ -180,6 +215,7 @@ export class QuestLogComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
