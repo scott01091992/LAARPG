@@ -1,0 +1,11 @@
+div.eventTile 
+    div.eventTileInner
+        div.eventTileFront
+            h1.eventTitle {{event.title}}
+            img.eventIconImage([src]="event.flavorImage | assetsEventImg")
+            span.eventDate {{dateTime}}
+        div.eventTileBack
+            span.eventTitleFlipped {{event.title}}
+            span.eventLocation {{event.location}}
+            div.eventDescription {{event.description}}
+            

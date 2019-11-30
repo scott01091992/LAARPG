@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-quest-log',
@@ -14,205 +15,259 @@ export class QuestLogComponent implements OnInit {
         return str;
     }
 
-    quests = [{
-        createdAt: "Jan 7th 2019",
+    quests: any = [{
         title: "Partners For Life",
-        expirationDate: null,
-        borderColor: "#e84855",
+        prologue: "It was at Everest Tea and Coffee that Brandon had first been introduced to Kali. Brandon's friend Evan had just got him a job at Honeywell, and this was the closest cafe to the building. There was an attraction, and there was intrigue, but Brandon was an introvert and wasn't looking to get to know someone new... especially someone who made him so nervous just by looking at him. Kali was her name. He wouldn't remember that for another year. He really did have no idea who the girl on the other side of the counter would one day become. ",
         summary: "Brandon met Kali for the first time in August 2019. He decided to change his life plan and live a life with her as his partner. That was only the beginning of their adventure...",
-        objective: "Live out our lives as the best partners ever. Using teamwork, reason, logic and cooperation to make everything better for each other all the time.",
-        awards: [{
-            name: "Its Official",
-            description: "Reach officially dating status with Kali",
-            completed: true,
-            dateCompleted: null,
-            icon: "Image"
-        },{
-            name: "Its Legal",
-            description: "Married Kali, wedding dress and all",
-            completed: false,
-            dateCompleted: null,
-            icon: "Image"
-        },{
-            name: "Sharing a Roof",
-            description: "Move in with Kali, living under the same roof together",
-            completed: false,
-            dateCompleted: null,
-            icon: "Image"
-        },{
-            name: "Meeting the Kids",
-            description: "Spend a day with Ari and Ava for the first time",
-            completed: true,
-            dateCompleted: null,
-            icon: "Image"
-        }],
-        events: [
+        borderColor: "#EB9486",
+        cards: [
             {
-                title: "Pax with Kali",
-                description: "Brandon was offered to come along for a weekend at Pax by Kali. Extremely excited to meet another gamer such as himself, he dove into this new relationship head first.",
-                location: "Convention Center in Seattle",
-                participants: [{
-                    name: "Kali",
-                    type: "Favorite Person",
-                    personality: "Outgoing, Energetic, Scatterbrained, Cute, Optimistic, Logical, Reasonable, Fair, Kind, Smart, Self-Sufficent",
-                    met: "July 29th 2019",
-                    events: {
-                        name: "Pax with Kali",
-                        date: "August 30th 2019"
-                    }
-                },{
-                    name: "Jason"
-                },{
-                    name: "Rich"
-                }],
-                flavorImage: "pax2019.png",
-                dateTime: "August 30th 2019",
-                choices: [{
-                    option: "Go to Pax with Kali as a friend on Monday",
-                    selected: false,
-                    icon: "image"
-                },
-                {
-                    option: "Avoid going out in public and spending money, and just play video games",
-                    selected: false,
-                    icon: "image"
-                },
-                {
-                    option: "Go to Pax with Kali as her date by sneakily getting 2 tickets for Saturday",
-                    selected: true,
-                    icon: "image"
-                }]
+                type: "objective",
+                completionDate: null, //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                card: {
+                    objective: "Move in with Kali",
+                    primary: true,
+                    description: "After talking to Kali about moving in together, its definitely part of the plan. ",
+                    status: 'incomplete', //when status is changed to complete, have an input field to input the date as a moment
+                    award: "Sharing a Roof",
+                    icon: "moving.svg"
+                }
             },
             {
-                title: "Seven Lions at The Gorge",
-                description: "After Brandon and Kali discovered the artist Seven Lions and gained an emotional bond to each other through the music, they decided to attend a local show featuring them.",
-                participants: [{
-                    name: "Kali",
-                    type: "Favorite Person",
-                    personality: "Outgoing, Energetic, Scatterbrained, Cute, Optimistic, Logical, Reasonable, Fair, Kind, Smart, Self-Sufficent",
-                    met: "July 29th 2019",
-                    events: {
-                        name: "Pax with Kali",
-                        date: "August 30th 2019"
-                    }
-                }]
-                ,
-                flavorImage: "seven-lions.jpg",
-                dateTime: "Oct 7th 2019",
-                choices: [{
-                    option: "Find a Hotel and take a 1 hour Uber ride to get there and back",
-                    selected: false,
-                    icon: "image"
-                },
-                {
-                    option: "Sleep in the car at night.",
-                    selected: false,
-                    icon: "image"
-                },
-                {
-                    option: "Stay for 3 days and camp out in premier campgrounds",
-                    selected: true,
-                    icon: "image"
-                }]
+                type: "objective",
+                completionDate: null, //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                card: {
+                    objective: "Marry Kali",
+                    primary: true,
+                    description: "Being married is important to Kali. Make it happen, and do it right.",
+                    status: 'incomplete',
+                    award: "Wedding Bells",
+                    icon: "married.svg"
+                }
             },
             {
-                title: "Getting Fired from Honeywell",
-                description: "After his supervisor got a crush on Kali, Brandon was put on 'thin ice', and eventually fired for 'unapproved break time', which was a questionable offense at best. Luckily, getting let go in such a manner allowed him to receive a 7500 dollar travel package.",
-                participants: [{
-                    name: "Kali",
-                    type: "Favorite Person",
-                    personality: "Outgoing, Energetic, Scatterbrained, Cute, Optimistic, Logical, Reasonable, Fair, Kind, Smart, Self-Sufficent",
-                    met: "July 29th 2019",
-                    events: {
-                        name: "Pax with Kali",
-                        date: "August 30th 2019"
-                    }
-                }, {
-                    name: "Luke"
-                },{
-                    name: "Tim"
-                }]
-                ,
-                flavorImage: "honeywell-vector-logo.png",
-                dateTime: "Oct 30th 2019",
-                choices: null
+                type: "objective",
+                completionDate: moment("09-14-2019", "MM-DD-YYYY"), //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                card: {
+                    objective: "Become Kali's Boyfriend",
+                    primary: true,
+                    description: "After discovering love, the first step is to not let it go.",
+                    status: 'complete',
+                    award: "It's Official",
+                    icon: "couple.svg"
+                }
             },
             {
-                title: "Unofficially Officially Together",
-                description: "Unsure if Kali was serious or not about wanting to be with Brandon, they met up for the first time since they started expressing interest in one another. It was only a short while before it was clear that they were meant to be together. And thus, an anniversary date was set, unofficially of course.",
-                location: "Brandon's house in Kent",
-                participants: [{
-                    name: "Kali",
-                    type: "Favorite Person",
-                    personality: "Outgoing, Energetic, Scatterbrained, Cute, Optimistic, Logical, Reasonable, Fair, Kind, Smart, Self-Sufficent",
-                    met: "July 29th 2019",
-                    events: {
-                        name: "Pax with Kali",
-                        date: "August 30th 2019"
-                    }
-                }],
-                flavorImage: "together.png",
-                dateTime: "September 14th 2019",
-                choices: null
+                type: "objective",
+                completionDate: null, //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                card: {
+                    objective: "Help Kali with her Resume",
+                    primary: false,
+                    description: "Kali has been sending out an old version of her Resume. Write her a new one and help her start a fulfilling career.",
+                    status: 'incomplete',
+                    award: "Resume Writer",
+                    icon: "resume.svg"
+                }
+            },
+            {
+                type: "objective",
+                completionDate:moment("09-10-2019", "MM-DD-YYYY"), //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                card: {
+                    objective: "Hold Kalis hand for the first time",
+                    primary: false,
+                    description: "She is not single, but you've wanted to hold her hand for so long... Its time to make a move.",
+                    status: 'complete',
+                    award: "First Contact",
+                    icon: "hold-hands.svg"
+                }
+            },
+            {
+                type: "event",
+                completionDate:moment("08-30-2019", "MM-DD-YYYY"),
+                card: {
+                    title: "Pax with Kali",
+                    description: "Brandon was offered to come along for a weekend at Pax by Kali. Extremely excited to meet another gamer such as himself, he dove into this new relationship head first.",
+                    location: "Convention Center in Seattle",
+                    flavorImage: "pax2019.png"
+                }
+            },
+            {
+                type: "event",
+                completionDate:moment("10-07-2019", "MM-DD-YYYY"),
+                card: {
+                    title: "Seven Lions & Glitch Mob",
+                    description: "After Brandon and Kali discovered the artist Seven Lions and gained an emotional bond to each other through the music, they decided to attend a local show featuring them.",
+                    location: "The Gorge, Washington",
+                    flavorImage: "seven-lions.jpg"
+                }
+            },
+            {
+                type: "event",
+                completionDate:moment("10-30-2019", "MM-DD-YYYY"),
+                card: {
+                    title: "Getting Fired",
+                    description: "After his supervisor got a crush on Kali, Brandon was put on 'thin ice', and eventually fired for 'unapproved break time', which was a questionable offense at best. Luckily, getting let go in such a manner allowed him to receive a 7500 dollar travel package.",
+                    location: "Honeywell Aerospace",
+                    flavorImage: "honeywell-vector-logo.png"
+                }
+            },
+            {
+                type: "event",
+                completionDate:moment("09-14-2019", "MM-DD-YYYY"),
+                card: {
+                    title: "Unofficially Officially Together",
+                    description: "Unsure if Kali was serious or not about wanting to be with Brandon, they met up for the first time since they started expressing interest in one another. It was only a short while before it was clear that they were meant to be together. And thus, an anniversary date was set, unofficially of course.",
+                    location: "Brandon's house in Kent",
+                    flavorImage: "together.png"
+                }
+            },
+            {
+                type: "momentCard",
+                completionDate:moment("11-14-2019", "MM-DD-YYYY"),
+                card: {
+                    title: "A Proper Date",
+                    description: "Kali took Brandon out for all you can eat Steak at a Brazillian Steakhouse in order to celebrate their 2nd Month Anniversary. After they were done eating, it turned out Kali's card was not activated yet, so Brandon paid for it instead. They were both too full to follow up with a movie and took the party back home to crash for the night.",
+                    photo: "2ndAnniversaryDinner",
+                    location: "Brazillian Steakhouse"
+                }
+            },
+            {
+                type: "momentCard",
+                completionDate:moment("11-28-2019", "MM-DD-YYYY"),
+                card: {
+                    title: "The First Thanksgiving",
+                    description: "It was a challenging night full of cooking, cleaning and last minute problem solving, but Kali and Brandon pulled through. So much food on the table for dinner, it was definitely a successful mission.",
+                    photo: "firstThanksgiving.jpg",
+                    location: "Kali's Apartment in Fircrest, WA"
+                }
             }
         ]
-    },{
-        createdAt: "October 30th 2019",
+    },
+    {
         title: "Earning a Living",
-        expirationDate: null,
-        borderColor: "#9bc53d",
-        summary: "After losing his job at Honeywell, it was time to start the unemployment train once again. Unfortunately, there would be many other hurdles to overcome along the way.",
-        objective: "Get a new job in the tech industry that can grow into a career.",
+        prologue: "With his interests being computer software and solving challenging problems, Brandon has always gravitated towards opportunities in the information technology and troubleshooting.",
+        summary: "Career history and education aside, the goal remains the same as its been for many years now. Become a software developer.",
+        borderColor: "#0C6291",
+        cards: [
+            {
+                type: "objective",
+                completionDate: moment("09-14-2019", "MM-DD-YYYY"), //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                card: {
+                    objective: "Move to Kansas with Honeywell",
+                    primary: true,
+                    description: "The Honeywell site is being relocated in Olathe Kansas. Start a life there and go to school during the 2 year commitment upon moving.",
+                    status: 'failed',
+                    award: "Put me in Coach",
+                    icon: "move.svg"
+                }
+            },
+            {
+                type: "objective",
+                completionDate: null, //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                card: {
+                    objective: "Obtain a job that will lead into a software development career",
+                    primary: true,
+                    description: "Send out applications and try to achieve something great. Bonus points for keeping it in the software space, but hardware is good too.",
+                    status: 'incomplete',
+                    award: "Put me in Coach",
+                    icon: "move.svg"
+                }
+            },
+            {
+                type: "objective",
+                completionDate: moment("09-14-2019", "MM-DD-YYYY"), //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                card: {
+                    objective: "Move to Kansas with Honeywell",
+                    primary: true,
+                    description: "The Honeywell site is being relocated in Olathe Kansas. Start a life there and go to school during the 2 year commitment upon moving.",
+                    status: 'failed',
+                    award: "Put me in Coach",
+                    icon: "move.svg"
+                }
+            },
+            {
+                type: "objective",
+                completionDate: moment("09-14-2019", "MM-DD-YYYY"), //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                card: {
+                    objective: "Move to Kansas with Honeywell",
+                    primary: true,
+                    description: "The Honeywell site is being relocated in Olathe Kansas. Start a life there and go to school during the 2 year commitment upon moving.",
+                    status: 'failed',
+                    award: "Put me in Coach",
+                    icon: "move.svg"
+                }
+            },
+            {
+                type: "event",
+                completionDate:moment("10-30-2019", "MM-DD-YYYY"),
+                card: {
+                    title: "Getting Fired",
+                    description: "After his supervisor got a crush on Kali, Brandon was put on 'thin ice', and eventually fired for 'unapproved break time', which was a questionable offense at best. Luckily, getting let go in such a manner allowed him to receive a 7500 dollar travel package.",
+                    location: "Honeywell Aerospace",
+                    flavorImage: "honeywell-vector-logo.png"
+                }
+            },
+            {
+                type: "event",
+                completionDate:moment("10-30-2019", "MM-DD-YYYY"),
+                card: {
+                    title: "Getting Fired",
+                    description: "After his supervisor got a crush on Kali, Brandon was put on 'thin ice', and eventually fired for 'unapproved break time', which was a questionable offense at best. Luckily, getting let go in such a manner allowed him to receive a 7500 dollar travel package.",
+                    location: "Honeywell Aerospace",
+                    flavorImage: "honeywell-vector-logo.png"
+                }
+            }
+        ],
+        objectives: [
+            {
+                objective: "Obtain a job that will lead into a software development career",
+                primary: true,
+                description: "Send out applications and try to achieve something great. Bonus points for keeping it in the software space, but hardware is good too.",
+                status: 'incomplete',
+                award: "Put me in Coach",
+                icon: "image"
+            },
+            {
+                objective: "Find a source of secondary income",
+                primary: false,
+                description: "Search for odd jobs, or contractor opportunities in the coding or troubleshooting space.",
+                status: 'incomplete',
+                award: "Jack of All Trades",
+                icon: "image"
+            },
+            {
+                objective: "Make a career plan and education plan",
+                primary: false,
+                description: "Do research and write out a full career plan to follow and review over time",
+                status: 'incomplete',
+                award: "Written in Stone",
+                icon: "image"
+            }
+        ],
         events: [
             {
                 title: "Back in Gear",
                 description: "Brandon started looking for jobs and found that there were a few more pressing matters to attend to first. Relearning the new web development technologies and getting a mode of transportation.",
-                location: "N/a",
-                participants: null,
+                location: "Home in Kent",
                 flavorImage: "getting-organized.jpg",
-                dateTime: "November 2nd 2019",
-                choices: null
+                dateTime: "November 2nd 2019"
             },
             {
                 title: "Buying a Car",
                 description: "After browsing the web for a vehicle for a few days, Brandon decided it was time to go from explore to exploit and pull the trigger on a car",
-                participants: [{
-                    name: "Kali",
-                    type: "Favorite Person",
-                    personality: "Outgoing, Energetic, Scatterbrained, Cute, Optimistic, Logical, Reasonable, Fair, Kind, Smart, Self-Sufficent",
-                    met: "July 29th 2019",
-                    events: {
-                        name: "Pax with Kali",
-                        date: "August 30th 2019"
-                    }
-                },{
-                    name: "Ari"
-                },{
-                    name: "Ava"
-                }]
-                ,
+                location: "Sunset Auto Sales, Tacoma WA",
                 flavorImage: "toyota-camry-2011.jpg",
-                dateTime: "November 15th 2019",
-                choices: [{
-                    option: "Buy a car for less than 4000 from a private seller",
-                    selected: false,
-                    icon: "image"
-                },
-                {
-                    option: "Buy the newest model car for under 5k possible.",
-                    selected: true,
-                    icon: "image"
-                },
-                {
-                    option: "Wait for the perfect deal",
-                    selected: false,
-                    icon: "image"
-                }]
+                dateTime: "November 15th 2019"
             }
         ]
     }];
 
-  constructor() { }
+  constructor() {
+
+      let now = moment();
+      console.log(now.format())
+
+  }
 
   ngOnInit() {
 

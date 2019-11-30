@@ -1,41 +1,30 @@
-@import '../../../variables'
+@import '../../variables'
 
 #questLogContainer
     display:flex
     flex-direction: column
+
     .quest
         font-family: basic-font
         text-align: center
         display: flex
         justify-content: center
+
         .questTile
-            width: 35vw
+            width: 25em
             padding: 2em 1em
             border: 1em solid
+
             .questTitle
                 font-family: header-font
                 font-size: 2.5em
             .questSummary
                 padding: 1em 0em
                 text-align: left
-            .expirationDate
-            .eventsIconBar
+            .cards
                 display: flex
                 flex-direction: column
-                .eventIconImageHolder
-                    justify-content: center
-                    align-items: center
-                    display: inline-block
-                    flex-grow: 1
-                    padding: .5
-                    .eventTitle
-                        display: block
-                    .eventDate
-                        display: block
-                    .eventIconImage
-                        padding: 1em
-                        margin: 1em
-                        height: 7em
-                        width: 7em
-                        border-radius: 50%
-                        box-shadow: .1em .1em .1em .1em lightgrey
+                .card
+                    .eventCard
+                    .momentCard
+                    .objectiveCard
