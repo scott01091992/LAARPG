@@ -6,12 +6,11 @@ import { AppComponent } from './app.component';
 import { QuestLogComponent } from './components/quest-log/quest-log.component';
 import { AssetsEventImgPipe } from './pipes/assets-event-img.pipe';
 import { EventCardComponent } from './components/quest-log/event-card/event-card.component';
-import { QuoteCardComponent } from './components/quest-log/quote-card/quote-card.component';
 import { MomentCardComponent } from './components/quest-log/moment-card/moment-card.component';
 import { ObjectiveCardComponent } from './components/quest-log/objective-card/objective-card.component';
-import { ConversationCardComponent } from './components/quest-log/conversation-card/conversation-card.component';
 import { AssetsIconSvgPipe } from './pipes/assets-icon-svg.pipe';
 import { MomentSortPipe } from './pipes/moment-sort.pipe';
+import { MomentFormatPipe } from './pipes/moment-format.pipe';
 
 @NgModule({
   declarations: [
@@ -19,12 +18,11 @@ import { MomentSortPipe } from './pipes/moment-sort.pipe';
     QuestLogComponent,
     AssetsEventImgPipe,
     EventCardComponent,
-    QuoteCardComponent,
     MomentCardComponent,
     ObjectiveCardComponent,
-    ConversationCardComponent,
     AssetsIconSvgPipe,
-    MomentSortPipe
+    MomentSortPipe,
+    MomentFormatPipe
   ],
   imports: [
     BrowserModule,

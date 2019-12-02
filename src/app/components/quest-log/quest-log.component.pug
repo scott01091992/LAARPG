@@ -12,7 +12,7 @@ main#questLogContainer
             p.questSummary {{quest.summary}}
             
             div.cards(*ngFor="let card of quest.cards | momentSort; index as i")
-                div.card {{card.completionDate}}
+                div.card {{card.completionDate | momentFormat}}
                     div.eventCard(*ngIf="card.type == 'event'")
                         app-event-card([event]="card.card")
                     div.momentCard(*ngIf="card.type == 'moment'")

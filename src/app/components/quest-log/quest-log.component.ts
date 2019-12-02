@@ -122,17 +122,17 @@ export class QuestLogComponent implements OnInit {
                 }
             },
             {
-                type: "momentCard",
+                type: "moment",
                 completionDate:moment("11-14-2019", "MM-DD-YYYY"),
                 card: {
                     title: "A Proper Date",
                     description: "Kali took Brandon out for all you can eat Steak at a Brazillian Steakhouse in order to celebrate their 2nd Month Anniversary. After they were done eating, it turned out Kali's card was not activated yet, so Brandon paid for it instead. They were both too full to follow up with a movie and took the party back home to crash for the night.",
-                    photo: "2ndAnniversaryDinner",
+                    photo: "2ndAnniversaryDinner.jpg",
                     location: "Brazillian Steakhouse"
                 }
             },
             {
-                type: "momentCard",
+                type: "moment",
                 completionDate:moment("11-28-2019", "MM-DD-YYYY"),
                 card: {
                     title: "The First Thanksgiving",
@@ -169,39 +169,39 @@ export class QuestLogComponent implements OnInit {
                     primary: true,
                     description: "Send out applications and try to achieve something great. Bonus points for keeping it in the software space, but hardware is good too.",
                     status: 'incomplete',
-                    award: "Put me in Coach",
-                    icon: "move.svg"
+                    award: "A New Career",
+                    icon: "promotion.svg"
                 }
             },
             {
                 type: "objective",
-                completionDate: moment("09-14-2019", "MM-DD-YYYY"), //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                completionDate: null, //if there is no date data, it has not been added to the timeline yet, and is pending completion
                 card: {
-                    objective: "Move to Kansas with Honeywell",
-                    primary: true,
-                    description: "The Honeywell site is being relocated in Olathe Kansas. Start a life there and go to school during the 2 year commitment upon moving.",
-                    status: 'failed',
-                    award: "Put me in Coach",
-                    icon: "move.svg"
+                    objective: "Find a source of secondary income",
+                    primary: false,
+                    description: "Search for odd jobs, or contractor opportunities in the coding or troubleshooting space.",
+                    status: 'incomplete',
+                    award: "Jack of All Trades",
+                    icon: "income.svg"
                 }
             },
             {
                 type: "objective",
-                completionDate: moment("09-14-2019", "MM-DD-YYYY"), //if there is no date data, it has not been added to the timeline yet, and is pending completion
+                completionDate: null, //if there is no date data, it has not been added to the timeline yet, and is pending completion
                 card: {
-                    objective: "Move to Kansas with Honeywell",
-                    primary: true,
-                    description: "The Honeywell site is being relocated in Olathe Kansas. Start a life there and go to school during the 2 year commitment upon moving.",
-                    status: 'failed',
-                    award: "Put me in Coach",
-                    icon: "move.svg"
+                    objective: "Make a career plan and education plan",
+                    primary: false,
+                    description: "Do research and write out a full career plan to follow and review over time",
+                    status: 'incomplete',
+                    award: "Written in Stone",
+                    icon: "stone.svg"
                 }
             },
             {
                 type: "event",
-                completionDate:moment("10-30-2019", "MM-DD-YYYY"),
+                completionDate:moment("11-02-2019", "MM-DD-YYYY"),
                 card: {
-                    title: "Getting Fired",
+                    title: "Back in Gear",
                     description: "After his supervisor got a crush on Kali, Brandon was put on 'thin ice', and eventually fired for 'unapproved break time', which was a questionable offense at best. Luckily, getting let go in such a manner allowed him to receive a 7500 dollar travel package.",
                     location: "Honeywell Aerospace",
                     flavorImage: "honeywell-vector-logo.png"
@@ -209,55 +209,12 @@ export class QuestLogComponent implements OnInit {
             },
             {
                 type: "event",
-                completionDate:moment("10-30-2019", "MM-DD-YYYY"),
+                completionDate:moment("11-15-2019", "MM-DD-YYYY"),
                 card: {
-                    title: "Getting Fired",
-                    description: "After his supervisor got a crush on Kali, Brandon was put on 'thin ice', and eventually fired for 'unapproved break time', which was a questionable offense at best. Luckily, getting let go in such a manner allowed him to receive a 7500 dollar travel package.",
-                    location: "Honeywell Aerospace",
-                    flavorImage: "honeywell-vector-logo.png"
-                }
-            }
-        ],
-        objectives: [
-            {
-                objective: "Obtain a job that will lead into a software development career",
-                primary: true,
-                description: "Send out applications and try to achieve something great. Bonus points for keeping it in the software space, but hardware is good too.",
-                status: 'incomplete',
-                award: "Put me in Coach",
-                icon: "image"
-            },
-            {
-                objective: "Find a source of secondary income",
-                primary: false,
-                description: "Search for odd jobs, or contractor opportunities in the coding or troubleshooting space.",
-                status: 'incomplete',
-                award: "Jack of All Trades",
-                icon: "image"
-            },
-            {
-                objective: "Make a career plan and education plan",
-                primary: false,
-                description: "Do research and write out a full career plan to follow and review over time",
-                status: 'incomplete',
-                award: "Written in Stone",
-                icon: "image"
-            }
-        ],
-        events: [
-            {
-                title: "Back in Gear",
-                description: "Brandon started looking for jobs and found that there were a few more pressing matters to attend to first. Relearning the new web development technologies and getting a mode of transportation.",
-                location: "Home in Kent",
-                flavorImage: "getting-organized.jpg",
-                dateTime: "November 2nd 2019"
-            },
-            {
-                title: "Buying a Car",
-                description: "After browsing the web for a vehicle for a few days, Brandon decided it was time to go from explore to exploit and pull the trigger on a car",
-                location: "Sunset Auto Sales, Tacoma WA",
-                flavorImage: "toyota-camry-2011.jpg",
-                dateTime: "November 15th 2019"
+                    title: "Buying a Car",
+                    description: "After browsing the web for a vehicle for a few days, Brandon decided it was time to go from explore to exploit and pull the trigger on a car",
+                    location: "Sunset Auto Sales, Tacoma WA",
+                    flavorImage: "toyota-camry-2011.jpg"                }
             }
         ]
     }];

@@ -1,1 +1,6 @@
-p {{moment.title}}
+div.momentCard
+    h3.momentTitle {{moment.title}}
+    img.momentPhotograph([src]="moment.photo | assetsEventImg")
+    p.momentDescription {{moment.description}}
+    label.momentLocation {{moment.location}}
+    

@@ -9,13 +9,15 @@ export class MomentSortPipe implements PipeTransform {
   transform(cards: any[]): any[]{
       let cardsArr = cards;
       let counter = cardsArr.length;
+      let incompleteCardArr = [];
       let newCardArr = [];
       for(let i = 0; i < counter; i++){
           if(cardsArr[i].completionDate != null){
               newCardArr.push(cards[i]);
+          }else{
+              incompleteCardArr.push(cards[i]);
           }
       }
-      console.log(newCardArr);
       let swapElement = (array, indexA, indexB) => {
           let tmp = array[indexA];
           array[indexA] = array[indexB];
@@ -23,7 +25,6 @@ export class MomentSortPipe implements PipeTransform {
       }
       for(let j = 0; j < newCardArr.length; j++){
           for(let k = 0; k < newCardArr.length-1; k++){
-              console.log('j:'+j+' k:'+k);
               if(newCardArr[j].completionDate.isAfter(newCardArr[k].completionDate)){
                   swapElement(newCardArr, j, k);
                   j--;
@@ -31,8 +32,8 @@ export class MomentSortPipe implements PipeTransform {
               }
           }
       }
-      console.log(newCardArr);
-    return newCardArr;
+      let finalList = incompleteCardArr.concat(newCardArr);
+    return finalList;
   }
 
 }
