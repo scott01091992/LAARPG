@@ -5,11 +5,9 @@ import * as moment from 'moment';
   name: 'momentFormat'
 })
 export class MomentFormatPipe implements PipeTransform {
-
   transform(value: any): any {
       if(value){
           return value.format("MMMM Do YYYY");
       }
   }
-
 }

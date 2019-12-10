@@ -5,7 +5,6 @@ import * as moment from 'moment';
   name: 'momentSort'
 })
 export class MomentSortPipe implements PipeTransform {
-
   transform(cards: any[]): any[]{
       let cardsArr = cards;
       let counter = cardsArr.length;
@@ -35,5 +34,4 @@ export class MomentSortPipe implements PipeTransform {
       let finalList = incompleteCardArr.concat(newCardArr);
     return finalList;
   }
-
 }

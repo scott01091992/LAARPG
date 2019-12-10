@@ -3,9 +3,8 @@ div.eventTile
         div.eventTileFront
             h1.eventTitle {{event.title}}
             img.eventIconImage([src]="event.flavorImage | assetsEventImg")
-            span.eventDate {{dateTime}}
+            span.eventLocation {{event.location}}
         div.eventTileBack
             span.eventTitleFlipped {{event.title}}
-            span.eventLocation {{event.location}}
             div.eventDescription {{event.description}}
             

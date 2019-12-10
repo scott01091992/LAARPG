@@ -1,8 +1,9 @@
 div.objectiveTile([ngClass]="{ 'completeObjective' : (objective.status == 'complete') , 'incompleteObjective' : (objective.status == 'incomplete'), 'failedObjective' : (objective.status == 'failed') }")
-    h3.primaryObjective(*ngIf="objective.primary") {{objective.objective}}
-    h4.secondaryObjective(*ngIf="!(objective.primary)") {{objective.objective}}
-    p.objectiveDescription {{objective.description}}
     img.objectiveIcon([src]="objective.icon | assetsIconSvg")
+    h4.objectiveHeader Objective Status: {{objective.status}}
+    h4.primaryObjective(*ngIf="objective.primary") Primary Objective: {{objective.objective}}
+    h4.secondaryObjective(*ngIf="!(objective.primary)") Optional Objective: {{objective.objective}}
+    p.objectiveDescription {{objective.description}}
     div.awardEarned(*ngIf="objective.status == 'complete'")
         p.award Award: {{objective.award}}
      

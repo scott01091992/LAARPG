@@ -6,12 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./objective-card.component.sass']
 })
 export class ObjectiveCardComponent implements OnInit {
-
     @Input() objective: any;
-
   constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }

@@ -8,7 +8,6 @@ import * as moment from 'moment';
 })
 
 export class QuestLogComponent implements OnInit {
-
     getBorderColor = (color) => {
         console.log(color);
         var str = "solid 1em 1em 1em 1em " + color;
@@ -219,15 +218,6 @@ export class QuestLogComponent implements OnInit {
         ]
     }];
 
-  constructor() {
-
-      let now = moment();
-      console.log(now.format())
-
-  }
-
-  ngOnInit() {
-
-  }
-
+  constructor() { }
+  ngOnInit() { }
 }

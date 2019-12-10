@@ -1,24 +1,23 @@
 main#questLogContainer
-
+    h1.questLogHeader Quest Log
     article.quest(*ngFor="let quest of quests")
-        
         section.questTile([ngStyle]="{'border-color': quest.borderColor}")
-            h1.questTitle {{quest.title}}...
-            
-            h2 Prologue:
-            p.prologue {{quest.prologue}}
-            
-            h2 Summary:
-            p.questSummary {{quest.summary}}
-            
+            h1.questTitle {{quest.title}}
+            h2.introText Prologue:
+            p.prologueText {{quest.prologue}}
+            h2.introText Summary:
+            p.questText {{quest.summary}}
             div.cards(*ngFor="let card of quest.cards | momentSort; index as i")
-                div.card {{card.completionDate | momentFormat}}
-                    div.eventCard(*ngIf="card.type == 'event'")
+                label.timeStamp {{card.completionDate | momentFormat}}
+                div.card 
+                    div(*ngIf="card.type == 'event'")
                         app-event-card([event]="card.card")
-                    div.momentCard(*ngIf="card.type == 'moment'")
+                    div(*ngIf="card.type == 'moment'")
                         app-moment-card([moment]="card.card")
-                    div.objectiveCard(*ngIf="card.type == 'objective'")
+                    div(*ngIf="card.type == 'objective'")
                         app-objective-card([objective]="card.card")
+                        
+                
                         
                         
                     
